@@ -4,15 +4,15 @@ function Pangram(phrase) {
 
 Pangram.prototype.isPangram = function() {
   if(this.phrase === '') return false;
-  return (this.removeDuplicates(this.removeWhiteAndPunct(this.lowerAndSort(this.phrase))) === 'abcdefghijklmnopqrstuvwxyz');
+  return (this.removeDuplicates(this.keepAlphanumeric(this.lowerAndSort(this.phrase))) === 'abcdefghijklmnopqrstuvwxyz');
 }
 
 Pangram.prototype.lowerAndSort = function(string) {
   return string.trim().toLowerCase().split("").sort().join("");
 }
 
-Pangram.prototype.removeWhiteAndPunct = function(string) {
-  return string.replace(/[^\w]|\s*/g,"");
+Pangram.prototype.keepAlphanumeric = function(string) {
+  return string.replace(/[^\w]/g,"");
 }
 
 Pangram.prototype.removeDuplicates = function(string) {
