@@ -1,18 +1,13 @@
 function PhoneNumber(input) {
   this.input = input.trim().split(/[\s\(\).-]/).join('');
   this.number = function() {
-    switch(this.input.length) {
-      case 9:
-        return '0000000000';
-      case 11:
-        if(this.input.slice(0,1) === '1') {
-          return this.input.slice(1);
-        } else {
-          return '0000000000';
-        }
-      default:
-        return this.input;
+    if(this.input.length === 10) {
+      return this.input;
     }
+    if(this.input.length === 11 && this.input.slice(0,1) === '1') {
+      return this.input.slice(1);
+    }
+    return '0000000000';
   };
   this.areaCode = function(){
     return this.input.slice(0,3);
