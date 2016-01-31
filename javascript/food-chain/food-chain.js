@@ -52,4 +52,11 @@ FoodChain.prototype.verse = function(number) {
   return this.intro + this.animals[number][0];
 }
 
+FoodChain.prototype.verses = function(start, end) {
+  var temp = '';
+  for(var i = start; i <= end; i++) { 
+    temp += this.verse(i) + "\n";
+  }
+  return temp;
+}
 module.exports = FoodChain;
