@@ -1,7 +1,7 @@
 function FoodChain() {
 
   this.intro = 'I know an old lady who swallowed a ';
-
+  
   this.animal = {
     1: 'fly', 
     2: 'spider', 
@@ -47,9 +47,6 @@ function FoodChain() {
     }
   }
 
-  this.swallowed = function(n) {
-    return 'She swallowed the '+this.animal[n]+' to catch the '+this.animal[n-1]+'.\n';
-  }
   this.end = function(animal) {
     switch (animal) {
       case 'horse': return '';
