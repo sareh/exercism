@@ -8,6 +8,6 @@ ETL.prototype.transform = function(oldDb) {
       self.newDb[letter.toLowerCase()] = parseInt(value);
     });
   });
-  return self.newDb;
+  return this.newDb;
 }
 module.exports = ETL;
