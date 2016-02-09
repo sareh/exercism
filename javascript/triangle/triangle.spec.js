@@ -77,4 +77,8 @@ describe('Triangle', function() {
     expect(triangle.kind.bind(triangle)).toThrow();
   });
 
+  it('triangles violating triangle inequality are illegal 3', function() {
+    var triangle = new Triangle(110,1,3);
+    expect(triangle.kind.bind(triangle)).toThrow();
+  })
 });
