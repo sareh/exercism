@@ -63,4 +63,11 @@ describe('School', function() {
       new Error('First argument should be a name & the second a grade number.'));
   });
 
+  it('roster cannot be modified outside of module',function() {
+    school.add('Aimee', 2);
+    var roster = school.roster();
+    roster[2].push('Oops.');
+    var expectedDb = { 2 : [ 'Aimee' ] };
+    expect(school.roster()).toEqual(expectedDb);
+  });
 });

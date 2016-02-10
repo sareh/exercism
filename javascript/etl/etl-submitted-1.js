@@ -1,13 +1,13 @@
 function ETL() {}
 
 ETL.prototype.transform = function(oldDb) {
-  var newDb = {};
+  var self = this;
+  self.newDb = {};
   Object.keys(oldDb).forEach(function(value) {
     oldDb[value].forEach(function(letter) {
-      newDb[letter.toLowerCase()] = parseInt(value);
+      self.newDb[letter.toLowerCase()] = parseInt(value);
     });
   });
-  //Try using the reduce method as the outer iterator. 
-  return newDb;
+  return this.newDb;
 }
 module.exports = ETL;
