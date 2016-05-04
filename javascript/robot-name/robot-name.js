@@ -8,7 +8,6 @@ function Robot() {
 Robot.prototype.repeatUntilUnique = function() {
   while(this.hasBeenUsed(this.name)) {
     this.name = this.generateName();
-    console.log('Generated new name!');
   }
 }
 Robot.prototype.hasBeenUsed = function(name) {
