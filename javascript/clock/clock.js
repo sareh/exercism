@@ -1,6 +1,4 @@
-var Clock = function () {
-}
-Clock.prototype.at = function (hours, mins) {
+var at = function (hours, mins) {
   this.time = ':';
   hours = (hours < 10) ? '0' + hours : hours;
   mins = (mins < 10) ? '0' + mins : mins;
@@ -9,4 +7,4 @@ Clock.prototype.at = function (hours, mins) {
   return this.time;
 }
 
-module.exports = {"at": Clock.prototype.at};
+module.exports = {"at": at};
