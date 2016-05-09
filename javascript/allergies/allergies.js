@@ -12,6 +12,7 @@ var Allergies = function (score) {
     }
     return allergies;
   }
+
   this.allergicTo = function (allergen) {
     var indexOfAllergen = this.allAllergies.indexOf(allergen);
     if (indexOfAllergen > -1) {
@@ -20,6 +21,7 @@ var Allergies = function (score) {
     }
     return false;
   }
+
 }
 
 module.exports = Allergies;
