@@ -12,7 +12,14 @@ var Allergies = function (score) {
     }
     return allergies;
   }
-
+  this.allergicTo = function (allergen) {
+    var indexOfAllergen = this.allAllergies.indexOf(allergen);
+    if (indexOfAllergen > -1) {
+      allergenScore = Math.pow(2, indexOfAllergen);
+      return (allergenScore & score) ? true : false;
+    }
+    return false;
+  }
 }
 
 module.exports = Allergies;

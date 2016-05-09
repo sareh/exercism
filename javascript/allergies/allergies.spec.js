@@ -42,19 +42,19 @@ describe('Allergies',function() {
     expect(allergies.list()).toEqual(['eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']);
   });
 
-  xit('no allergic means not allergic', function() {
+  it('no allergic means not allergic', function() {
     var allergies = new Allergies(0);
     expect(allergies.allergicTo('peanuts')).toEqual(false);
     expect(allergies.allergicTo('cats')).toEqual(false);
     expect(allergies.allergicTo('strawberries')).toEqual(false);
   });
 
-  xit('allergic to eggs', function() {
+  it('allergic to eggs', function() {
     var allergies = new Allergies(1);
     expect(allergies.allergicTo('eggs')).toEqual(true);
   });
 
-  xit('allergic to eggs and other things', function() {
+  it('allergic to eggs and other things', function() {
     var allergies = new Allergies(5);
     expect(allergies.allergicTo('eggs')).toEqual(true);
   });
