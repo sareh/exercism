@@ -19,7 +19,6 @@ var Allergies = function (score) {
       allergenScore = Math.pow(2, indexOfAllergen);
       return (allergenScore & score) ? true : false;
     }
-    return false;
   }
 
 }
