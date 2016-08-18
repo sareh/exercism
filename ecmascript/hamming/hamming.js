@@ -1,4 +1,4 @@
-// The most readable version, using a for loop
+// Using map & call - slightly less readable
 export default class Hamming {
   compute(strand1, strand2) {
     let count = 0;
@@ -7,12 +7,10 @@ export default class Hamming {
       throw new Error('DNA strands must be of equal length.')
     }
 
-    for(let i=0; i < strand1.length; i++) {
-      if(strand1[i] !== strand2[i]) {
-        count += 1
-      }
-    }
-    
+    Array.prototype.map.call(strand1, (letter, idx) => { 
+      if (letter !== strand2[idx]) { count += 1}
+    })
+
     return count
   }
 }
